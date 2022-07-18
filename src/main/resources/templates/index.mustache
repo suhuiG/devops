@@ -1,0 +1,42 @@
+{{>layout/header}}
+
+    <h1> Spring-Boot Web Service</h1>
+    <br/>
+    <div class="col-md-12">
+        <div class="jumbotron">
+            <h1> Welcome to Spring-boot With Mustache</h1>
+            <p class="lead"> This is a simple page, a simple jumbotron-sytle component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p> You can insert a new board item throw following button.</p>
+            <p class="lead">
+                <a href="/posts/save" role="button" class="btn btn-primary">새글등록</a>
+            </p>        
+        </div>
+        <br/>
+
+        <p><h2> Board</h2></p>
+        
+        <!-- 목록 출력 영역 -->
+        <table class="table table-horizontal table-bordered">
+            <thead class="thead-strong">
+            <tr>
+                <th>No.</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>최종수정일</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+            {{#posts}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+                    <td>{{author}}</td>
+                    <td>{{modifiedDate}}</td>
+                </tr>
+            {{/posts}}
+            </tbody>
+        </table>
+    </div>
+
+{{>layout/footer}}
