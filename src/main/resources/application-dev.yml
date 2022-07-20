@@ -1,20 +1,23 @@
+server:
+  port: 8081
+
 spring:
   config:
     activate:
-      on-profile: local
+      on-profile: dev
   web:
     resources:
       static-locations: META-INF:/resources, classpath:/resources, classpath:/static, classpath:/static/dist
   # Database
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://180.231.34.81:5432/postgres
-    username: admin
-    password: admin
+    url: jdbc:postgresql://127.0.0.1:6432/postgres
+    username: user
+    password: password123
   # jpa properties
   jpa:
     hibernate:
-      ddl-auto: update # When you launch the application for the first time - switch "none" at "create"
+      ddl-auto: create # When you launch the application for the first time - switch "none" at "create"
     show-sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
